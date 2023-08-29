@@ -51,9 +51,9 @@ public class SesRequestUtil {
     private static final String ENCODING_BASE64 = "B";
 
     private final SesV2Client sesV2Client;
-    private final Validator validator;
-    private final Charset encodingCharset;
-    private final String configurationSetName;
+    private final Validator   validator;
+    private final Charset     encodingCharset;
+    private final String      configurationSetName;
 
     public SesRequestUtil(final SesV2Client sesV2Client, final Validator validator, final Charset encodingCharset,
             final String configurationSetName) {

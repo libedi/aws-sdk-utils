@@ -1,7 +1,8 @@
-package io.github.libedi.awssdkutils.ses.event;
+package io.github.libedi.awssdkutils.ses.event.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.github.libedi.awssdkutils.ses.event.type.MessageType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package io.github.libedi.awssdkutils.ses.event;
+package io.github.libedi.awssdkutils.ses.event.type;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-public enum MessageType {
+public enum MessageType implements CodeEnum {
 
     /** SubscriptionConfimation : 구독확인 */
     SUBSCRIPTION_CONFIMATION("SubscriptionConfimation"),
@@ -24,7 +24,7 @@ public enum MessageType {
     private final String code;
 
     private static final Map<String, MessageType> map = Arrays.stream(values())
-            .collect(Collectors.toMap(MessageType::getCode, Function.identity()));
+            .collect(Collectors.toMap(CodeEnum::getCode, Function.identity()));
 
     @JsonCreator
     public static MessageType from(final String code) {
