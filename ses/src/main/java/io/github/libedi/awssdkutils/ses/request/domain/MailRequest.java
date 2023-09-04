@@ -51,6 +51,7 @@ public class MailRequest {
 
     @NotBlank
     private String subject;
+    @NotNull
     private String content;
 
     @Valid

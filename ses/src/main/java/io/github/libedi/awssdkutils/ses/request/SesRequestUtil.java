@@ -24,7 +24,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.MediaTypeFactory;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
 import io.github.libedi.awssdkutils.ses.request.domain.Attachment;
 import io.github.libedi.awssdkutils.ses.request.domain.Email;
@@ -154,8 +153,7 @@ public class SesRequestUtil {
      * @return
      */
     private boolean isHtmlCo1ntent(final String content) {
-        return StringUtils.startsWithIgnoreCase(content, "<!DOCTYPE html")
-                || StringUtils.startsWithIgnoreCase(content, "<html");
+        return content.toUpperCase().contains("<!DOCTYPE HTML") || content.toUpperCase().contains("<HTML");
     }
 
     /**
