@@ -63,7 +63,7 @@ public class SesRequestUtil {
     }
 
     /**
-     * 이메일 발송 : 표준 형식 / MIME 형식
+     * 이메일 발송
      *
      * @param mailRequest
      * @return messageId
@@ -138,7 +138,7 @@ public class SesRequestUtil {
                 .data(content)
                 .charset(encodingCharset.toString())
                 .build();
-        if (isHtmlCo1ntent(content)) {
+        if (isHtmlContent(content)) {
             builder.html(bodyContent);
         } else {
             builder.text(bodyContent);
@@ -152,7 +152,7 @@ public class SesRequestUtil {
      * @param content
      * @return
      */
-    private boolean isHtmlCo1ntent(final String content) {
+    private boolean isHtmlContent(final String content) {
         return content.toUpperCase().contains("<!DOCTYPE HTML") || content.toUpperCase().contains("<HTML");
     }
 
@@ -204,7 +204,7 @@ public class SesRequestUtil {
         if (mailRequest.hasBcc()) {
             messageHelper.setBcc(convertInternetAddresses(mailRequest.getBccs()));
         }
-        messageHelper.setText(mailRequest.getContent(), isHtmlCo1ntent(mailRequest.getContent()));
+        messageHelper.setText(mailRequest.getContent(), isHtmlContent(mailRequest.getContent()));
         for (final Attachment attachment : mailRequest.getAttachments()) {
             messageHelper.addAttachment(encodeTextByBase64(attachment.getFileName()),
                     new ByteArrayDataSource(attachment.getBytes(), getMimeType(attachment.getFileName())));
