@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.libedi.awssdkutils</groupId>
   <artifactId>ses</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <name>ses</name>
   <description>AWS SDK Utility for Amazon Simple Email Service</description>
   <url>https://github.com/libedi/aws-sdk-utils</url>

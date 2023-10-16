@@ -45,7 +45,7 @@ public class Email {
     }
 
     /**
-     * RFC822에 따라 형식화된 이름과 이메일 주소 반환 : "이름 <이메일 주소>"
+     * RFC822에 따라 형식화된 이름과 이메일 주소 반환 : "이름 &lt;이메일 주소&gt;"
      *
      * @param encodingCharset
      * @return
