@@ -26,12 +26,12 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class SesDelivery implements TimeLocalizable {
 
-    private String          timestamp;
-    private long            processingTimeMillis;
-    private List<Recipient> recipients;
-    private String          smtpResponse;
+    private String       timestamp;
+    private long         processingTimeMillis;
+    private List<String> recipients;
+    private String       smtpResponse;
     @JsonProperty("reportingMTA")
-    private String          reportingMta;
-    private String          remoteMtaIp;
+    private String       reportingMta;
+    private String       remoteMtaIp;
 
 }
