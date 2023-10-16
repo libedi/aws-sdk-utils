@@ -19,12 +19,12 @@ public class InvalidMailRequestException extends RuntimeException {
 
     public InvalidMailRequestException(final Set<ConstraintViolation<MailRequest>> violation) {
         super(String.format("Please check the email request information.\n%s", violation.stream()
-                .map(cv -> cv.getPropertyPath() + ":" + cv.getMessage())
+                .map(cv -> String.format("- %s: %s", cv.getPropertyPath(), cv.getMessage()))
                 .collect(Collectors.joining("\n"))));
     }
 
     public InvalidMailRequestException(final String field, final String message) {
-        super(String.format("Please check the email request information.\n%s:%s", field, message));
+        super(String.format("Please check the email request information.\n- %s: %s", field, message));
     }
 
 }

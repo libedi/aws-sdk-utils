@@ -20,9 +20,9 @@ import javax.mail.BodyPart;
 import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMessage.RecipientType;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
-import javax.mail.internet.MimeMessage.RecipientType;
 import javax.validation.Validation;
 import javax.validation.Validator;
 
@@ -38,12 +38,10 @@ import autoparams.AutoSource;
 import io.github.libedi.awssdkutils.ses.request.domain.Attachment;
 import io.github.libedi.awssdkutils.ses.request.domain.Email;
 import io.github.libedi.awssdkutils.ses.request.domain.MailRequest;
-import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.services.sesv2.SesV2Client;
 import software.amazon.awssdk.services.sesv2.model.SendEmailRequest;
 import software.amazon.awssdk.services.sesv2.model.SendEmailResponse;
 
-@Slf4j
 @MockitoSettings
 class SesRequestUtilTest {
 
@@ -83,7 +81,7 @@ class SesRequestUtilTest {
                     try {
                         util.send(request);
                     } catch (InvalidMailRequestException e) {
-                        log.error(e.getMessage(), e);
+                        e.printStackTrace();
                         throw e;
                     }
                 });
